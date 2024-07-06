@@ -28,6 +28,7 @@ To get started with DCG Recon, follow these steps:
 
 - Windows 7 or later
 - .NET 6.0 or later
+- .NET Framework 4.7.2 or later
 - Active internet connection for accessing schedule data
 
 ## Usage
