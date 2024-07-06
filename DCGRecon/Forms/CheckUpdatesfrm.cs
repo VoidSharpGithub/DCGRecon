@@ -16,8 +16,8 @@ namespace DCGRecon.Forms
 {
     public partial class CheckUpdatesfrm : Form
     {
-        private string FilePath = "***REMOVED***Updates/DCGReconInstaller.msi";
-        private string SetupPath = "***REMOVED***Updates/setup.exe";
+        private string FilePath = "";
+        private string SetupPath = "";
         private string InstallerVersion;
         private string CurrentAppVersion;
         public CheckUpdatesfrm()
@@ -57,50 +57,6 @@ namespace DCGRecon.Forms
 
             return version;
         }
-
-        /*
-        private string GetInstallerVersion(string FilePath)
-        {
-
-            string script = $@"
-                $path = '{FilePath}'
-                $windowsInstaller = New-Object -ComObject WindowsInstaller.Installer
-                $database = $windowsInstaller.GetType().InvokeMember('OpenDatabase', 'InvokeMethod', $null, $windowsInstaller, @($path, 0))
-                $query = 'SELECT `Value` FROM `Property` WHERE `Property` = ''ProductVersion'''
-                $view = $database.GetType().InvokeMember('OpenView', 'InvokeMethod', $null, $database, @($query))
-                $view.GetType().InvokeMember('Execute', 'InvokeMethod', $null, $view, $null)
-                $record = $view.GetType().InvokeMember('Fetch', 'InvokeMethod', $null, $view, $null)
-                $version = $record.GetType().InvokeMember('StringData', 'GetProperty', $null, $record, 1)
-                $version
-            ";
-
-            UpdateWorker.ReportProgress(20);
-
-            ProcessStartInfo psi = new ProcessStartInfo()
-            {
-                FileName = "powershell",
-                Arguments = $"-Command \"{script}\"",
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-
-            UpdateWorker.ReportProgress(28);
-
-            using (Process process = Process.Start(psi))
-            {
-                UpdateWorker.ReportProgress(37);
-                using (var reader = process.StandardOutput)
-                {
-                    UpdateWorker.ReportProgress(43);
-                    string result = reader.ReadToEnd();
-                    Debug.WriteLine("MSI Version: " + result.Trim());
-                    return result.Trim();
-                }
-            }
-        }
-        */
-
         private void CheckUpdatesfrm_Load(object sender, EventArgs e)
         {
             if (!UpdateWorker.IsBusy)
