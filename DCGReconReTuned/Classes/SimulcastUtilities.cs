@@ -249,7 +249,7 @@ namespace DCGReconReTuned.Classes
         }
 
         //Filter Util
-        private static string SavePath = "***REMOVED***";
+        private static string SavePath = "//dcgwinfile01/DCG_Groups/DCG_Everyone/DCG Recon/Hidden/";
         private static async Task<bool> IsUrlAccessible(string url)
         {
             try
@@ -382,8 +382,8 @@ namespace DCGReconReTuned.Classes
                         //Note: Please do not use these unless you know what you are doing.
                         //Abuse of this will result in this feature being removed from this application.
                         Credentials credentials = Credentials.ServicePrincipalCredentialsBuilder()
-                            .WithClientId("***REMOVED***")
-                            .WithClientSecret("***REMOVED***")
+                            .WithClientId("5cfb7cc8a8e546fdbefe4b512c7cc365")
+                            .WithClientSecret("p8e-A7hQPpUxelbmJJg3n_b13BByRwM5MWs9")
                             .Build();
                         Adobe.PDFServicesSDK.ExecutionContext context = Adobe.PDFServicesSDK.ExecutionContext.Create(credentials);
                         ExportPDFOperation exportPdfOperation = ExportPDFOperation.CreateNew(ExportPDFTargetFormat.XLSX);

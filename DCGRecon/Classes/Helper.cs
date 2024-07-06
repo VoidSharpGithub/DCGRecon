@@ -10,8 +10,8 @@ namespace DCGRecon.Classes
 {
     public static class Helper
     {
-        private static readonly byte[] Key = Encoding.UTF8.GetBytes("0TFY5nvt5Xjw7TyU"); // Must be 16 bytes for AES-128
-        private static readonly byte[] IV = Encoding.UTF8.GetBytes("mUY7vaTiJ6fnNWqU"); // Must be 16 bytes
+        private static readonly byte[] Key = Encoding.UTF8.GetBytes("0TfY7nvtEXjw1tyU"); // Must be 16 bytes for AES-128
+        private static readonly byte[] IV = Encoding.UTF8.GetBytes("mUY1vaTiJGFnNWQU"); // Must be 16 bytes
 
         public static string EncryptString(string plainText)
         {

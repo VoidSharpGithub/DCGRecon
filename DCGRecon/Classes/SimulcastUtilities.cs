@@ -249,7 +249,7 @@ namespace DCGRecon.Classes
         }
 
         //Filter Util
-        private static string SavePath = "***REMOVED***";
+        private static string SavePath = "";
         private static async Task<bool> IsUrlAccessible(string url)
         {
             try
@@ -367,38 +367,6 @@ namespace DCGRecon.Classes
             }
             MessageBox.Show("Can not find directory.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
-        }
-        public static async Task CreateXLSXFromURL(string url, string scheduleDate)
-        {
-            Stream stream = GetStreamFromURL(url);
-            await Task.Run(() =>
-            {
-                try
-                {
-                    string FileNamePath = $"{SavePath}{scheduleDate}.xlsx";
-                    if (!File.Exists(FileNamePath))
-                    {
-                        //Credentials to the PDF Services API
-                        //Note: Please do not use these unless you know what you are doing.
-                        //Abuse of this will result in this feature being removed from this application.
-                        Credentials credentials = Credentials.ServicePrincipalCredentialsBuilder()
-                            .WithClientId("***REMOVED***")
-                            .WithClientSecret("***REMOVED***")
-                            .Build();
-                        Adobe.PDFServicesSDK.ExecutionContext context = Adobe.PDFServicesSDK.ExecutionContext.Create(credentials);
-                        ExportPDFOperation exportPdfOperation = ExportPDFOperation.CreateNew(ExportPDFTargetFormat.XLSX);
-                        exportPdfOperation.SetInput(FileRef.CreateFromStream(stream, "application/pdf"));
-                        ExportPDFOperation.SupportedSourceFormat.PDF.GetMediaType();
-                        FileRef result = exportPdfOperation.Execute(context);
-                        result.SaveAs(FileNamePath);
-                        MessageBox.Show("PDF Loaded!\n\nMonth has now been added.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            });
         }
         public static async Task<bool> LoadFilterData(DataGridView DGV, string ScheduleFilePath, List<string> FilterList)
         {

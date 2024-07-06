@@ -344,20 +344,8 @@ namespace DCGRecon
         }
         private void FilterBtn_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("This feature is a work in progress.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            //return;
-            SimulcastFilterfrm frm = new SimulcastFilterfrm();
-            if (reconInfo.filter == "")
-                frm.IsFilterSet = false;
-            else
-                frm.IsFilterSet = true;
-            frm.CurFilterSet = reconInfo.filter;
-            if (frm.ShowDialog(this) == DialogResult.OK)
-            {
-                reconInfo.filter = frm.CurFilterSet;
-                reconInfo.filterList = frm.CurFilterList;
-                DCGReconRegistry.SaveRegistry(reconInfo);
-            }
+            MessageBox.Show("This feature is a work in progress.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            return;
         }
         private void ToggleAutoSimulcastBtn_Click(object sender, EventArgs e)
         {

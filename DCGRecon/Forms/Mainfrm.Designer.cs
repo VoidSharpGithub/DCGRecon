@@ -60,7 +60,6 @@
             SimulcastGroupBox = new GroupBox();
             RefreshBtn = new Button();
             OnlyShowActiveCheckBox = new CheckBox();
-            FilterBtn = new Button();
             SimulcastDataGridView = new DataGridView();
             ActiveRaceColumn = new DataGridViewCheckBoxColumn();
             RaceChannelColumn = new DataGridViewTextBoxColumn();
@@ -342,7 +341,6 @@
             // 
             SimulcastGroupBox.Controls.Add(RefreshBtn);
             SimulcastGroupBox.Controls.Add(OnlyShowActiveCheckBox);
-            SimulcastGroupBox.Controls.Add(FilterBtn);
             SimulcastGroupBox.Controls.Add(SimulcastDataGridView);
             SimulcastGroupBox.Location = new Point(357, 143);
             SimulcastGroupBox.Name = "SimulcastGroupBox";
@@ -354,7 +352,7 @@
             // RefreshBtn
             // 
             RefreshBtn.Cursor = Cursors.Hand;
-            RefreshBtn.Location = new Point(189, 215);
+            RefreshBtn.Location = new Point(270, 214);
             RefreshBtn.Name = "RefreshBtn";
             RefreshBtn.Size = new Size(75, 23);
             RefreshBtn.TabIndex = 9;
@@ -373,18 +371,6 @@
             OnlyShowActiveCheckBox.Text = "Only Show Active";
             OnlyShowActiveCheckBox.UseVisualStyleBackColor = true;
             OnlyShowActiveCheckBox.CheckedChanged += OnlyShowActiveCheckBox_CheckedChanged;
-            // 
-            // FilterBtn
-            // 
-            FilterBtn.Cursor = Cursors.Hand;
-            FilterBtn.Enabled = false;
-            FilterBtn.Location = new Point(270, 215);
-            FilterBtn.Name = "FilterBtn";
-            FilterBtn.Size = new Size(75, 23);
-            FilterBtn.TabIndex = 7;
-            FilterBtn.Text = "Filter";
-            FilterBtn.UseVisualStyleBackColor = true;
-            FilterBtn.Click += FilterBtn_Click;
             // 
             // SimulcastDataGridView
             // 
@@ -898,7 +884,6 @@
         private Label ReceiverUpdatesInputLbl;
         private Label ReceiverIPInputLbl;
         private GroupBox SimulcastGroupBox;
-        private Button FilterBtn;
         private DataGridView SimulcastDataGridView;
         private Label ReceiverModelInputLbl;
         private Label ReceiverModelLbl;
