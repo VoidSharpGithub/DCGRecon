@@ -107,7 +107,7 @@
             linkLabel1.Size = new Size(196, 15);
             linkLabel1.TabIndex = 4;
             linkLabel1.TabStop = true;
-            linkLabel1.Text = "YourEmailHere@Domain.com";
+            linkLabel1.Text = "YourAboutEmailHere@Domain.com";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // Aboutfrm
